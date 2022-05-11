@@ -1,0 +1,69 @@
+[1mtrue.[0m
+
+?- listing(bedplan(F1,F2,F3,F4)).
+
+
+bedplan(F1, F2, F3, F4) :-
+    name(F1, F2, F3, F4),
+    color(F1, F2, F3, F4),
+    flower(F1, _, _, C1),
+    flower(F2, _, _, C2),
+    flower(F3, _, _, C3),
+    flower(F4, _, _, C4),
+    write(F1),
+    write(' is '),
+    write(C1),
+    nl,
+    write(F2),
+    write(' is '),
+    write(C2),
+    nl,
+    write(F3),
+    write(' is '),
+    write(C3),
+    nl,
+    write(F4),
+    write(' is '),
+    write(C4).
+
+[1mtrue.[0m
+
+?- bedplan(F1,F2,F3,F4).
+
+
+daisies is yellow
+roses is red
+petunias is pink
+begonias is white
+F1 = daisies,
+F2 = roses,
+F3 = petunias,
+F4 = begonias [1m.[0m
+
+?- bedplan(F1,F2,F3,F4).
+
+
+daisies is yellow
+roses is red
+petunias is pink
+begonias is white
+F1 = daisies,
+F2 = roses,
+F3 = petunias,
+F4 = begonias [1m.[0m
+
+?- bedplan(F1,F2,F3,F4).
+
+
+daisies is yellow
+roses is red
+petunias is pink
+begonias is white
+F1 = daisies,
+F2 = roses,
+F3 = petunias,
+F4 = begonias [1m.[0m
+
+?- noprotocol().
+
+

@@ -1,0 +1,78 @@
+[1mtrue.[0m
+
+?- listing(bedplan(F1,F2,F3,F4)).
+
+
+bedplan(F1, F2, F3, F4) :-
+    name(F1, F2, F3, F4),
+    color(F1, F2, F3, F4),
+    wet(F1, F2, F3, F4),
+    flower(F1, _, W1, C1),
+    flower(F2, _, W2, C2),
+    flower(F3, _, W3, C3),
+    flower(F4, _, W4, C4),
+    write(F1),
+    write(' is '),
+    write(W1),
+    write(' and '),
+    write(C1),
+    nl,
+    write(F2),
+    write(' is '),
+    write(W2),
+    write(' and '),
+    write(C2),
+    nl,
+    write(F3),
+    write(' is '),
+    write(W3),
+    write(' and '),
+    write(C3),
+    nl,
+    write(F4),
+    write(' is '),
+    write(W4),
+    write(' and '),
+    write(C4).
+
+[1mtrue.[0m
+
+?- bedplan(F1,F2,F3,F4).
+
+
+roses is dry and red
+daisies is wet and yellow
+petunias is wet and pink
+lilies is dry and white
+F1 = roses,
+F2 = daisies,
+F3 = petunias,
+F4 = lilies [1m.[0m
+
+?- bedplan(F1,F2,F3,F4).
+
+
+roses is dry and red
+daisies is wet and yellow
+petunias is wet and pink
+lilies is dry and white
+F1 = roses,
+F2 = daisies,
+F3 = petunias,
+F4 = lilies [1m.[0m
+
+?- bedplan(F1,F2,F3,F4).
+
+
+roses is dry and red
+daisies is wet and yellow
+petunias is wet and pink
+lilies is dry and white
+F1 = roses,
+F2 = daisies,
+F3 = petunias,
+F4 = lilies [1m.[0m
+
+?- noprotocol().
+
+

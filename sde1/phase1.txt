@@ -1,0 +1,74 @@
+[1mtrue.[0m
+
+[0m?- listing(bedplan(F1,F2,F3,F4)).
+
+
+bedplan(F1, F2, F3, F4) :-
+    name(F1, F2, F3, F4),
+    flower(F1, _, _, _),
+    flower(F2, _, _, _),
+    flower(F3, _, _, _),
+    flower(F4, _, _, _),
+    write('This is '),
+    write(F1),
+    nl,
+    write('This is '),
+    write(F2),
+    nl,
+    write('This is '),
+    write(F3),
+    nl,
+    write('This is '),
+    write(F4).
+
+[1mtrue.[0m
+
+?- bedplan(F1,F2,F3,F4).
+
+
+This is daisies
+This is roses
+This is petunias
+This is daffodils
+F1 = daisies,
+F2 = roses,
+F3 = petunias,
+F4 = daffodils[1m.[0m
+
+?- bedplan(F1,F2,F3,F4).
+
+
+This is daisies
+This is roses
+This is petunias
+This is daffodils
+F1 = daisies,
+F2 = roses,
+F3 = petunias,
+F4 = daffodils[1m.[0m
+
+?- bedplan(F1,F2,F3,F4).
+
+
+This is daisies
+This is roses
+This is petunias
+This is daffodils
+F1 = daisies,
+F2 = roses,
+F3 = petunias,
+F4 = daffodils[1m.[0m
+
+?- bedplan(F1,F2,F3,F4).
+
+
+This is daisies
+This is roses
+This is petunias
+This is daffodils
+F1 = daisies,
+F2 = roses,
+F3 = petunias,
+F4 = daffodils[1m.[0m
+
+?- noprotocol().

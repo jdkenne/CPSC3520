@@ -1,0 +1,74 @@
+(* Problem 1: First Duplicate in a List. Prototype:
+first_duplicate of a list returns -10000 if there are no duplicates
+in the integer list argument. Otherwise the first item that occurs
+more than once (duplicate) in the integer list is returned.*)
+
+Signature:  
+ 
+val first_duplicate : int list -> int = <fun> *)
+let rec first_duplicate = function list ->
+  if List.mem (List.hd list) (List.tl list) == true then List.hd list
+  else 
+  if List.tl list == [] then -10000
+  else
+    first_duplicate (List.tl list);;
+
+(* Problem 2: First Non-Repeating Element in a List. Helper Function - After calling List.tl, this function assures the list is of size one, 
+i.e. the list is soon to be empty *)
+let rec no_repeat list another_list = 
+  if list = [] then
+    -1000
+  else
+  if List.mem(List.hd list)(List.tl list) || List.mem(List.hd list)(another_list) then
+    no_repeat(List.tl list)(List.hd list::another_list)
+  else
+    (List.hd list);;
+(* Prototype: first_nonrepeating of a list returns -10000 if there are 
+no non-repeated (non-duplicated) element in the list. Otherwise it 
+returns the first non-repeating element in the integer list. 
+ 
+Signature:  
+ 
+val first_nonrepeating : int list -> int = <fun>  *)
+let rec first_nonrepeating = function(list) ->
+  no_repeat list [];;
+
+(*Problem Three: The Sum of 2 Problem. Prototype: sumOfTwo(a,b,v) returns false if there does not exdist 
+and integer in a, which added to any integer in b, equals v.  If 
+there is an integer in a, and an integer in b that sum to v, return 
+true. *)
+ 
+Signature:  
+ 
+val sumOfTwo : int list * int list * int -> bool = <fun> *)
+let rec sumOfTwo = function (a,b,v) ->
+  if a == [] || b == [] then false
+  else
+  if List.hd a + List.hd b == v then true
+  else sumOfTwo(List.tl a, b, v) || sumOfTwo(a, List.tl b, v);;
+
+* Problem Four: CYK Parsing Algorithm-Inspired Problem. Helper Function - list_decrease n , n=initial list, goes to 1 *)
+let rec list_decrease = function n ->
+  if n>1 then (n-1)::list_decrease(n-1) else [];;
+
+(* Helper Function - list_increase (i,n), i=initial list value and n=length of list *)
+let rec list_increase = function (i,n) ->
+  if n > 1 then i::list_increase(i+1,n-1) else [];;
+
+(* Helper Function - set aalist ablist, concatenates the lists aalist ablist -> (a, b) *)
+let rec set aalist ablist =
+  match aalist, ablist with
+  | [], _ -> []
+  | _, [] -> []
+  | hd :: tl, hd2 :: tl2 -> (hd, hd2) :: (set tl tl2)
+
+(* Prototpe: cyk_sublists n returns all of the positive integer pairs 
+ x and y that add up to n.  Pairs are returned as tuples.  Argument 
+n must be larger than 1, otherwise return [] 
+ 
+Signature:  
+ 
+val cyk_sublists : int -> (int * int) list = <fun> *)
+
+let rec cyk_sublists = function n ->
+  (set (list_increase(1,n)) (list_decrease(n)));;
